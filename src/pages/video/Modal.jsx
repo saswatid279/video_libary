@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { usePlaylist } from "../../context/playlist-context";
 import { useWatchlater } from "../../context/watchlater-context";
 import { useLikedvideo } from "../../context/likedvideo-context";
@@ -9,7 +9,7 @@ export default function Modal({ video }) {
   //const [playlistname, setplaylistname] = useState();
   const { likedvideodispatch } = useLikedvideo();
   const { watchlaterdispatch } = useWatchlater();
-  const { playlist, playlistdispatch } = usePlaylist();
+  const { playlist } = usePlaylist();
   const Addtolikedvideos = () => {
     (async () => {
       const { success, video: data } = await axios
@@ -74,7 +74,7 @@ export default function Modal({ video }) {
           </div>
           <div id="open-modal" class="modal-window">
             <div>
-              <a href="#" title="Close" className="modal-close">
+              <a href="/" title="Close" className="modal-close">
                 Close
               </a>
               <h2>Select a Playlist</h2>

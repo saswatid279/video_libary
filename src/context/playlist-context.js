@@ -16,6 +16,7 @@ export const PlaylistProvider = ({ children }) => {
         .then((response) => {
           return response.data;
         });
+        if(success)
       playlistdispatch({ type: "FETCH", payload: data });
     })();
   }, []);

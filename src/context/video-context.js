@@ -10,12 +10,13 @@ export const VideoProvider = ({ children }) => {
   });
   useEffect(() => {
     (async () => {
-      const { success, videos: data } = await axios
+      const { videos: data } = await axios
         .get("https://videolibrary.saswatidas.repl.co/videos")
         .then((response) => {
+          //console.log(success);
           return response.data;
         });
-
+        
       dispatch({ type: "fetch", payload: data });
     })();
   }, []);

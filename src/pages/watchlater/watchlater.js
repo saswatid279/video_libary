@@ -2,12 +2,14 @@ import { useWatchlater } from "../../context/watchlater-context";
 // import { useCart } from "../../context/cart-context";
 //import "./likedvideolist.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 export default function Watchlater() {
   const { watchlater, watchlaterdispatch } = useWatchlater();
 
   const removefromwatchlater = (id) => {
     (async () => {
-      const { success, video } = await axios
+      const { success } = await axios
         .delete(`https://videolibrary.saswatidas.repl.co/watchlater/${id}`)
         .then((response) => {
           return response.data;
@@ -80,9 +82,9 @@ export default function Watchlater() {
       <div class="container">
         <p>There are no videos to watch</p>
         <div>
-          <a href="" className="link-btn">
+        <Link to="/videos" className="link-btn">
             Watch Videos
-          </a>
+          </Link>
         </div>
       </div>
     );

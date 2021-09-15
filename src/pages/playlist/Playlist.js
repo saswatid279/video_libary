@@ -2,7 +2,7 @@ import { usePlaylist } from "../../context/playlist-context";
 import "./playlist.css";
 import axios from "axios";
 import { useState } from "react";
-import showallVideos from "../video/showallVideos";
+import ShowallVideos from "../video/showallVideos";
 
 export default function Playlist() {
   const [playlist_name, setplaylistname] = useState();
@@ -10,7 +10,7 @@ export default function Playlist() {
 
   const removefromplaylist = (id) => {
     (async () => {
-      const { success, playlist } = await axios
+      const { success } = await axios
         .delete(`https://videolibrary.saswatidas.repl.co/playlists/${id}`)
         .then((response) => {
           return response.data;
@@ -25,7 +25,7 @@ export default function Playlist() {
   
   function Createplaylist() {
     (async () => {
-      const { success, playlists: data } = await axios
+      const { success } = await axios
         .post(
           "https://videolibrary.saswatidas.repl.co/playlists/createplaylist",
           {
@@ -67,7 +67,7 @@ export default function Playlist() {
                 onClick={() => {
                   console.log(playlists.videos);
                   playlists.videos.map((video) => {
-                    showallVideos(video);
+                   return ShowallVideos(video);
                   });
                 }}
               >
@@ -100,7 +100,7 @@ export default function Playlist() {
         </div>
         <div id="open-modal" class="modal-window">
           <div>
-            <a href="#" title="Close" className="modal-close">
+            <a href="/" title="Close" className="modal-close">
               Close
             </a>
             <h1>Create Your Playlist</h1>

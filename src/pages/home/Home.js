@@ -7,17 +7,17 @@ export default function Home() {
   return (
     <div class="home-container">
       <img
-        src={require("../../images/movie.jpg")}
+        src="https://res.cloudinary.com/dvrti07sl/image/upload/v1631735854/movie_bqhduk.jpg"
         alt="not available"
         width="100%"
       />
       {/* <Slideshow /> */}
 
-      <button class="floating-btn">
+      {/* <button class="floating-btn">
         <a href="#">
-          {/* <Arrow width="0.8rem" height="0.8rem" /> */}
+          <Arrow width="0.8rem" height="0.8rem" />
         </a>
-      </button>
+      </button> */}
       <footer>
         <p>copyright@2021</p>
       </footer>

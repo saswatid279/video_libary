@@ -20,7 +20,7 @@ const ShowallVideos=(video)=>{
         </Link>
         <div className="card-content">
           <div className="logo">
-            <img src={`${video.channellogourl}`} />
+            <img src={`${video.channellogourl}` }  alt=" not available"/>
           </div>
 
           <div className="videoname">

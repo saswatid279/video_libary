@@ -2,13 +2,14 @@ import { useLikedvideo } from "../../context/likedvideo-context";
 // import { useCart } from "../../context/cart-context";
 //import "./likedvideolist.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Likedvideos() {
   const { likedvideo, likedvideodispatch } = useLikedvideo();
 
   const removefromlikedvideo = (id) => {
     (async () => {
-      const { success, video } = await axios
+      const { success } = await axios
         .delete(`https://videolibrary.saswatidas.repl.co/likedvideos/${id}`)
         .then((response) => {
           return response.data;
@@ -81,9 +82,9 @@ export default function Likedvideos() {
       <div class="container">
         <p>Your list of Liked Videos is empty</p>
         <div>
-          <a href="" className="link-btn">
+          <Link to="/videos" className="link-btn">
             Watch Videos
-          </a>
+          </Link>
         </div>
       </div>
     );
